@@ -1,0 +1,13 @@
+<h3><%= t(".heading") %></h3>
+<p class='lead'>
+  <%= t(".description") %>
+</p>
+
+<div class="row mb-2">
+  <% @slicers = Slicer.all.each do |slicer| %>
+    <%= form.label slicer.name, slicer.name, for: "model_slicer[model_slicers_enabled]", class: "col-sm-4 col-form-label" %>
+    <div class="col-sm-8 form-check form-switch">
+      <%= form.check_box "model_slicer[model_slicers_enabled]", checked: slicer.enabled, class: "form-check-input" %>
+    </div>
+  <% end %>
+</div>

@@ -317,6 +317,7 @@ en:
     expand: Expand
     menu: Menu
     new: New
+    open_in: Open in
     report: Report %{type}
     save: Save
     view: View

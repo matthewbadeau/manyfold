@@ -71,7 +71,10 @@
     <%= render partial: "problem", collection: @file.problems.visible(problem_settings) %>
 
     <%= card :secondary, t("layouts.card_list_page.actions_heading") do %>
-      <%= link_to safe_join([icon("cloud-download", t("general.download")), t("general.download")], " "), model_model_file_path(@model, @file, @file.extension&.to_sym, download: "true"), {class: "btn btn-secondary", download: "download"} %>
+      <%= link_to safe_join([icon("cloud-download", t("general.download")), t("general.download")], " "), model_model_file_path(@model, @file, @file.extension&.to_sym, download: "true"), {class: "btn btn-primary", download: "download"} %>
+      <% @slicers = Slicer.where(enabled: true).each do |slicers| %>
+        <p></p><%= link_to safe_join([icon("cloud-download", t("general.open_in")),"#{t("general.open_in")} #{slicers.name}"], " "), safe_join([slicers.uri, request.protocol, request.host_with_port, model_model_file_path(@model, @file, @file.extension&.to_sym, download: "true")], ""), {class: "btn btn-secondary", download: "download"} %>
+      <% end %>
     <% end %>
 
   </div>

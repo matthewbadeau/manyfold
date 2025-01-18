@@ -38,6 +38,9 @@ en:
         model_id: A unique numerical identifier for the model. We strongly recommend always including this at the end of your template to avoid name conflicts on disk.
         model_name: A filesystem-safe version of the model name.
         tags_html: 'a series of nested folders, one for each tag, arranged in order of tag popularity. For example: <code>fantasy/human/wizard</code>'
+    slicer_settings:
+      heading: Slicer Settings
+      description: Models can be opened using different slicers. Disable slicers you do not wish to use.
     general:
       submit: Save Settings
     multiuser:

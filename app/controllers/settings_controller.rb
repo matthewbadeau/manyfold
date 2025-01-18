@@ -29,6 +29,11 @@ class SettingsController < ApplicationController
     SiteSettings.model_tags_auto_tag_new = settings[:auto_tag_new]
   end
 
+  def update_slicer_settings(settings)
+    return unless settings
+    SiteSettings.model_slicers_enabled = settings[:model_slicers_enabled] == "1"
+  end
+
   def update_analysis_settings(settings)
     return unless settings
     SiteSettings.analyse_manifold = settings[:manifold] == "1"
