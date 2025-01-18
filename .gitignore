@@ -66,5 +66,8 @@ dump.rdb
 
 # IDE workspace files
 *.code-workspace
+.idea/
 
 .yarn
+package-lock.json
+
